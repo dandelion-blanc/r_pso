@@ -59,16 +59,15 @@ impl Particle
         (&mut self.pos, &mut self.vel, &mut self.pbest_pos)
     }
 
-    fn step_pos(&mut self) 
+    fn step_pos(&mut self)
     {
+        let (pos, vel, _) = pos.ref_mut();
         let mut pos = Vec::<f64>::new();
         let vel = Vec::<f64>::new();
 
-        let pv :Vec<f64> = 
-            pos.iter()
-            .zip(vel)
-            .map(|(p, v)| p + v)
-            .collect();
+        pos.iter_mut()
+        .zip(vel.iter())
+        .for_each(|(p, v)| *p += *v);
 
     }
 
