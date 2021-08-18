@@ -282,4 +282,20 @@ mod tests {
             ;
         println!("for each:{:?}",a1);
     }
+
+    #[test]
+
+    fn step_pos_test() 
+    {
+        let feval = 0.0;
+        let pbest_f = 0.0;
+        let pbest_pos = 0.0;
+        let pos = vec![1.0, 2.0, 3.0];
+        let vel = vec![2.0, 3.0, 4.0];
+
+        let test = Particle{feval,pos, vel, pbest_f, pbest_pos};
+        pos.step_pos();
+
+    }
+
 }
