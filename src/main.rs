@@ -61,9 +61,7 @@ impl Particle
 
     fn step_pos(&mut self)
     {
-        let (pos, vel, _) = pos.ref_mut();
-        let mut pos = Vec::<f64>::new();
-        let vel = Vec::<f64>::new();
+        let (pos, vel, _) = self.ref_mut();
 
         pos.iter_mut()
         .zip(vel.iter())
