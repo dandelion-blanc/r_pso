@@ -74,13 +74,19 @@ impl Particle
 
     fn step_pbest(&mut self) 
     {
-        let mut pbest_x = Vec::<f64>::new();
-        let mut current_x = Vec::<f64>::new();
+        let pbest_x = Vec::<f64>::new();
+        let current_x = Vec::<f64>::new();
         let (current_x, _, pbest_x) = self.ref_mut();
 
-        if pbest_x > current_x
+        for i in self.PsoParam.n_particle 
         {
-            pbest_x = current_x;
+            let score = current_x.iter_mut().sphere();
+
+            if score < pbest_x
+            {
+                pbest_x = score;
+                pbest_x = current_x;   
+            }
         }
     }
 }
