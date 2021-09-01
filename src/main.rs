@@ -74,9 +74,13 @@ impl Particle
 
     fn step_pbest(&mut self) 
     {
-        if self.pbest_pos > self.pos
+        let mut pbest_x = Vec::<f64>::new();
+        let mut current_x = Vec::<f64>::new();
+        let (current_x, _, pbest_x) = self.ref_mut();
+
+        if pbest_x > current_x
         {
-            self.pbest_pos = self.pos.clone();
+            pbest_x = current_x;
         }
     }
 }
