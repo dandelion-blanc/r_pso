@@ -295,4 +295,14 @@ mod tests {
             ;
         println!("for each:{:?}",a1);
     }
+
+    fn test_pbest_pos(&mut self) 
+    {
+        let pbest_x = vec![3.0, 1.0, 2.0];
+        let current_x = vec![1.0, 2.0, 3.0];
+
+        step_pbest();
+
+    }
+
 }
